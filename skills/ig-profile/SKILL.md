@@ -34,6 +34,26 @@ rows is enough for a first pass.
 
 Do not log into Instagram on their behalf.
 
+## Read the last entry first
+
+If `~/.claude/instagram/profile.md` exists, read its last `## ` entry before
+scoring. You need three things from it: the total, the score per rubric item,
+and the fixes with their status.
+
+Then, after scoring this run:
+
+- Open the report with one line: `Score changed from X to Y. Items changed:
+  name_field 2->10, pinned_three 0->10.` List only items whose score moved. If
+  nothing moved, say so.
+- A fix marked `[x]` in the last entry is done. Do not propose it again. A fix
+  still `[ ]` whose change now shows on the profile is also done: mark it `[x]`
+  in the new entry and say it landed. A fix still `[ ]` that has not landed is
+  carried forward, same id, not rewritten from scratch.
+- Copy every done fix into the new entry as `[x]`, so the last entry alone
+  holds the full list.
+
+No file means first run. Say so and skip the delta line.
+
 ## Score it
 
 Read `rubric.json` in this folder. Twelve items, 100 points, each with what
@@ -83,10 +103,51 @@ readable in one glance.
 
 ## Output
 
-Score table, then the rewrites as copy-ready blocks in fix-first order, each
-run through `/ig-human`. Re-score at the end and show the delta honestly. If
-the rewrite reaches 84 and not 98, say 84, and say what the rest needs, which
-is usually a grid, a story habit and a pinned post that does not exist yet.
-None of that is a rewrite.
+Short. Analysis first, then a line that is exactly `===COPY===`, then only the
+paste-ready text.
+
+Above the line: the delta line (from the second run on), the score table, the
+fixes in fix-first order with one line of why each, and the projected score if
+every fix lands. Show the projection honestly. If the rewrite reaches 84 and
+not 98, say 84, and say what the rest needs, which is usually a grid, a story
+habit and a pinned post that does not exist yet. None of that is a rewrite.
+
+Below the line: the rewrites as copy-ready blocks in fix-first order, each run
+through `/ig-human`. Nothing else.
 
 Nothing is saved to Instagram by this skill. The user edits each field.
+
+## Save the entry
+
+Append one entry to `~/.claude/instagram/profile.md` (create the folder and
+file if missing). Never edit or delete earlier entries. Store the score you
+measured, not the projected one.
+
+```
+## 2026-11-04
+total: 38/100
+name_field: 2/12
+bio_first_line: 3/12
+bio_body: 2/8
+pinned_three: 0/10
+link: 4/8
+highlights: 2/8
+grid_legibility: 4/8
+photo: 5/6
+handle: 4/6
+category_contact: 3/6
+recent_activity: 6/10
+story_presence: 3/6
+fixes:
+- [ ] name_field: add searched words after the name
+- [ ] pinned_three: pin proof, offer, intro
+- [x] link: one destination (done 2026-10-12)
+```
+
+One line per rubric item, using the ids in `rubric.json`. One fix per line,
+keyed by the rubric id it fixes, so the next run can match it. The user can
+tick a fix `[x]` by hand; that counts as done.
+
+If the path is not writable (claude.ai chat, a sandbox, no file tools), print
+the entry in a fenced block above `===COPY===`, tell the user to paste it at
+the end of their `profile.md`, and carry on. Do not fail the run over it.
