@@ -151,3 +151,28 @@ tick a fix `[x]` by hand; that counts as done.
 If the path is not writable (claude.ai chat, a sandbox, no file tools), print
 the entry in a fenced block above `===COPY===`, tell the user to paste it at
 the end of their `profile.md`, and carry on. Do not fail the run over it.
+
+## Turn the fixes into tasks
+
+After saving the entry, one task per open fix. Where the tasks go comes from
+the `task_tracker` field in `brand.md`, never from this file or a guess.
+
+- **Tracker set and reachable** (a connector or tool for it is available in
+  this session): create one task per open fix that has no task yet. Title:
+  `ig-profile: <rubric_id>: <change>`. Body: the paste-ready copy for that fix,
+  if it has one. Record the task link on the fix line in the entry:
+  `- [ ] name_field: add searched words after the name (task: <link>)`.
+- **On a re-run**, for every fix that is now done, mark its task done in the
+  tracker, using the link on the fix line, or the title if there is no link.
+  Do not create a second task for a fix that already has one.
+- **No tracker set, or none reachable:** write `~/.claude/instagram/fixes.md`
+  next to `profile.md` and stop there. Do not build a tracker client or call an
+  API by hand. Same lines as the entry's `fixes:` list, newest run on top under
+  a `## <date>` heading. On a re-run, tick the matching lines `[x]` in
+  `fixes.md` instead.
+
+If `fixes.md` is not writable either, the printed entry already carries the
+fix list. Say so and finish.
+
+Tasks are the only thing this skill writes outside the user's own files. It
+never posts, sends or edits anything on Instagram.
