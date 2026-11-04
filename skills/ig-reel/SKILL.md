@@ -22,8 +22,25 @@ python3 hookscore.py --hook "one line"      # score a single one
 python3 beats.py script.txt --target 30     # timed beat sheet before you shoot
 ```
 
+## Step 0: the brand brief
+
+Read `~/.claude/instagram/brand.md` if it exists. If a field you need is
+empty, ask. Do not infer it. Niche, range, audience, offers, credentials and
+claims never come from a bio, flags, a handle or a few posts. Credentials go in
+with the exact wording in `brand.md`. A claim that is not in `brand.md`, or is
+listed under "Claims not to make", is not written: ask, or leave `{{claim}}`.
+If the file does not exist, ask only for the fields this run needs and point
+the user to `brand/TEMPLATE.md` in this plugin.
+
 ## Before you write
 
+0. **No idea given?** If the user ran this with no idea and
+   `~/.claude/instagram/plan.md` exists, find the first REEL line in it that
+   `log.md` has no entry for. That is the next unposted reel.
+   Offer that one in a single line, "Next on the plan: FRI REEL OPINION #2
+   Negative Command - stop doing discovery calls. Write this one?", and on yes
+   use its formula and angle as the idea. No plan, or nothing unposted on it:
+   ask for the idea.
 1. Read `~/.claude/instagram/voice.md` if it exists. That is the user's voice
    profile: how they talk on camera, what they never say, who they are talking
    to. If it does not exist, ask for **three of their own reels**, transcribe or
@@ -94,7 +111,8 @@ Reply "yes" to log it, or tell me what to change.
 
 **7. Never publish.** This skill produces a script. The user shoots it and
 posts it. On "yes", append to `~/.claude/instagram/log.md` with the date, the
-hook formula used and the first line, so `/ig-audit` has a history later.
+hook formula used and the first line, so `/ig-audit` has a history later. If
+the reel came from `plan.md`, add the plan line too, so the next run skips it.
 
 ## On-screen text is a separate script
 
