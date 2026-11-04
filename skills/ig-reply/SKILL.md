@@ -17,6 +17,16 @@ most underused move on the platform.
 But the value is not equal across comments, so this skill sorts before it
 writes.
 
+## Step 0: the brand brief
+
+Read `~/.claude/instagram/brand.md` if it exists. If a field you need is
+empty, ask. Do not infer it. Niche, range, audience, offers, credentials and
+claims never come from a bio, flags, a handle or a few posts. Credentials go in
+with the exact wording in `brand.md`. A claim that is not in `brand.md`, or is
+listed under "Claims not to make", is not written: ask, or leave `{{claim}}`.
+If the file does not exist, ask only for the fields this run needs and point
+the user to `brand/TEMPLATE.md` in this plugin.
+
 ## Input
 
 The user pastes the comments, ideally with handles. Screenshots are fine. Do

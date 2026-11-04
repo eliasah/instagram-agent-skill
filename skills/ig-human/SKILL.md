@@ -27,6 +27,16 @@ vocabulary that only shows up in captions and voiceovers. It is meant to be
 edited. If the user has a word they always use that the lexicon strips, take it
 out of the file.
 
+## Step 0: the brand brief
+
+Read `~/.claude/instagram/brand.md` if it exists. If a field you need is
+empty, ask. Do not infer it. Niche, range, audience, offers, credentials and
+claims never come from a bio, flags, a handle or a few posts. Credentials go in
+with the exact wording in `brand.md`. A claim that is not in `brand.md`, or is
+listed under "Claims not to make", is not written: ask, or leave `{{claim}}`.
+If the file does not exist, ask only for the fields this run needs and point
+the user to `brand/TEMPLATE.md` in this plugin.
+
 ## Why this matters more on Instagram than it looks
 
 Captions are short and scripts get said out loud. A written-sounding line in a

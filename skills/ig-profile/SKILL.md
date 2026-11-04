@@ -15,6 +15,16 @@ storefront people browse. It is a **decision screen**, arrived at from one
 reel, and it gets about three seconds to answer one question: is there more of
 that here, and is it for me.
 
+## Step 0: the brand brief
+
+Read `~/.claude/instagram/brand.md` if it exists. If a field you need is
+empty, ask. Do not infer it. Niche, range, audience, offers, credentials and
+claims never come from a bio, flags, a handle or a few posts. Credentials go in
+with the exact wording in `brand.md`. A claim that is not in `brand.md`, or is
+listed under "Claims not to make", is not written: ask, or leave `{{claim}}`.
+If the file does not exist, ask only for the fields this run needs and point
+the user to `brand/TEMPLATE.md` in this plugin.
+
 ## Input
 
 Ask the user to paste or screenshot: the name field, the handle, the bio, what

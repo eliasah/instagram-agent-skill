@@ -52,6 +52,11 @@ reels and say "write my voice.md from these". Every skill reads that file. It
 matters more here than on other platforms, because you have to say the words
 out loud.
 
+Then copy `brand/TEMPLATE.md` to `~/.claude/instagram/brand.md`: your full
+range, audience, offers, credentials in their exact wording, and the claims a
+draft must never make. Every skill reads it first and asks rather than guessing
+any of it from your profile. Keep the filled-in copy out of git.
+
 ## The thirteen
 
 | command | what it does |
@@ -324,6 +329,7 @@ skills/ig-human/detect.py          the five-check panel
 skills/ig-viral/swipe.py           outlier ranking and formula classification
 skills/ig-profile/rubric.json      the 100-point profile score
 templates/voice.md                 your voice profile. Fill this in first.
+brand/TEMPLATE.md                  your brand brief: range, audience, offers, claims.
 ```
 
 ## Credit
