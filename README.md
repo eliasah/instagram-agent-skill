@@ -22,7 +22,7 @@ see it.
 Paste this into Claude:
 
 ```
-https://github.com/Jakeschincariol/instagram-agent-skill
+https://github.com/eliasah/instagram-agent-skill
 
 Install this skill, then confirm /ig-reel works.
 ```
@@ -30,14 +30,14 @@ Install this skill, then confirm /ig-reel works.
 Or do it yourself, in Claude Code:
 
 ```bash
-git clone https://github.com/Jakeschincariol/instagram-agent-skill.git
+git clone https://github.com/eliasah/instagram-agent-skill.git
 cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/
 ```
 
 Or as a plugin:
 
 ```
-/plugin marketplace add Jakeschincariol/instagram-agent-skill
+/plugin marketplace add eliasah/instagram-agent-skill
 /plugin install instagram-agent
 ```
 
@@ -339,10 +339,12 @@ brand/TEMPLATE.md                  your brand brief: range, audience, offers, cl
 
 ## Credit
 
-Made by Jake Schincariol, [opusjake.ai](https://opusjake.ai).
+Maintained by Elias Abou Haydar ([@eliasah](https://github.com/eliasah)).
 
-Sibling repo, same idea for a different platform:
-[linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill).
+Forked from Jake Schincariol's
+[instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill)
+([opusjake.ai](https://opusjake.ai)). His sibling repo does the same for
+LinkedIn: [linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill).
 
 ## License
 
