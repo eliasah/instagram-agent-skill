@@ -35,8 +35,8 @@ the user to `brand/TEMPLATE.md` in this plugin.
 ## Before you write
 
 0. **No idea given?** If the user ran this with no idea and
-   `~/.claude/instagram/plan.md` exists, find the next REEL line in it that is
-   not posted yet: its day is today or later, and `log.md` has no entry for it.
+   `~/.claude/instagram/plan.md` exists, find the first REEL line in it that
+   `log.md` has no entry for. That is the next unposted reel.
    Offer that one in a single line, "Next on the plan: FRI REEL OPINION #2
    Negative Command - stop doing discovery calls. Write this one?", and on yes
    use its formula and angle as the idea. No plan, or nothing unposted on it:
