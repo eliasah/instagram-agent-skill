@@ -1,6 +1,6 @@
 # The Instagram agent skill
 
-Thirteen Claude skills that run an Instagram account. Free, MIT, no signup, no
+Fourteen Claude skills that run an Instagram account. Free, MIT, no signup, no
 API key, nothing to connect.
 
 One of them writes your Reels off 26 hook formulas and scores the hook before
@@ -52,15 +52,20 @@ reels and say "write my voice.md from these". Every skill reads that file. It
 matters more here than on other platforms, because you have to say the words
 out loud.
 
-Then copy `brand/TEMPLATE.md` to `~/.claude/instagram/brand.md`: your full
-range, audience, offers, credentials in their exact wording, and the claims a
-draft must never make. Every skill reads it first and asks rather than guessing
-any of it from your profile. Keep the filled-in copy out of git.
+Or run `/ig-init` once. It asks for your brand brief, builds `voice.md` from
+three of your reels, and writes both to `~/.claude/instagram/`.
 
-## The thirteen
+The brand brief is `~/.claude/instagram/brand.md`, shaped by
+`brand/TEMPLATE.md`: your full range, audience, offers, credentials in their
+exact wording, and the claims a draft must never make. Every skill reads it
+first and asks rather than guessing any of it from your profile. Keep the
+filled-in copy out of git.
+
+## The fourteen
 
 | command | what it does |
 | --- | --- |
+| `/ig-init` | Start here. Asks for your brand brief, builds your voice from three reels, writes the files every other skill reads. Never guesses from your profile. |
 | `/ig-reel` | One idea into a Reel. Three hooks from [26 formulas](skills/ig-reel/hooks.json), scored, then the script, the on-screen text and a timed beat sheet. |
 | `/ig-viral` | Goes and finds what is working in your niche, ranks it by multiple over each account's own median, names the formula, writes the swipe file. |
 | `/ig-caption` | The caption, linted. Shows you the 125 characters the feed actually shows before the tap. |

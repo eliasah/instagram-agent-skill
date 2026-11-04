@@ -25,7 +25,7 @@ claims never come from a bio, flags, a handle or a few posts. Credentials go in
 with the exact wording in `brand.md`. A claim that is not in `brand.md`, or is
 listed under "Claims not to make", is not written: ask, or leave `{{claim}}`.
 If the file does not exist, ask only for the fields this run needs and point
-the user to `brand/TEMPLATE.md` in this plugin.
+the user to `/ig-init`.
 
 ## When to use it instead of a Reel
 
